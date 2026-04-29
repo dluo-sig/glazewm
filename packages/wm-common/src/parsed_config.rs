@@ -102,6 +102,11 @@ pub struct GeneralConfig {
   /// this if plugging in USB devices causes unwanted window re-layout.
   /// ** Exclusive to Windows due to `WM_DEVICECHANGE` API.
   pub listen_for_device_changes: bool,
+  
+  /// Whether to automatically set the tiling direction based on the
+  /// focused window's aspect ratio (wider -> horizontal, taller ->
+  /// vertical).
+  pub auto_set_tiling_direction: bool,
 }
 
 impl Default for GeneralConfig {
@@ -125,6 +130,7 @@ impl Default for GeneralConfig {
       },
       show_all_in_taskbar: false,
       listen_for_device_changes: true,
+      auto_set_tiling_direction: false,
     }
   }
 }
